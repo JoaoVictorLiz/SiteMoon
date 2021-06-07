@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Moon</a>
+        <ul>
+            <li><a href="#home" class="ativo">Home</a></li>
+            <li><a href="#sec">Sobre</a></li>
+            <li><a href="#">Trabalho</a></li>
+            <li><a href="#cont">Contato</a></li>
+        </ul>
+    </header>
+    <section id="home">
+        <img src="imagens/stars.png" id="stars">
+        <img src="imagens/moon.png" id="moon">
+        <img src="imagens/mountains_behind.png" id="mountains_behind">
+        <a href="#sec" id="btn">Explorar</a>
+        <img src="imagens/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Este site tem o intuito de mostrar o efeito parallax scrolling effects, pois este efeito deixa seu site um pouco mais atraente e chamativo, o efeito a qual eu me refiro é o de ao rolar a página para baixao a imagem de fundo o acompanhe, para simular o efeito de movimento, ele é feito totalmente na linguagem JavaScript e quis compartilhar um pouco desse conhecimento.<br><br></p>
+        <h2 id="cont">Redes Sociais</h2>
+        <p>
+            <ul class="soci">
+                <li><a id="bot" class="git" href="https://github.com/BaronSatoshi" target="_blank" rel="external ">GitHub</a>  Me siga e acompanhe meus projetos.</li><br>
+                <li><a id="bot" class="link" href="https://www.linkedin.com/in/joão-victor-liz-da-silveira-b347a71b5/">Linkedin</a> Me Adicione no Linkedin.</li><br>
+                <li><a id="bot" class="face" href="https://www.facebook.com/joaovictor.lizdasilveira/">Facebook</a> Me Siga no Facebook.</li><br>
+                <li><a id="bot" class="inst" href="https://www.instagram.com/joaovc_liz/">Instagram</a> Me siga no Instagram.</li>
+            </ul>
+        </p>
+    </div>
+    
+    <a class="gotopbtn" href="#"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px'; 
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';       
+        })
+    </script>
+</body>
+</html>
